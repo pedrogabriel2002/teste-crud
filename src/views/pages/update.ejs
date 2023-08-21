@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include ('../partials/header') %>
+    </header>
+    <div class="div-center">
+    <form class="form-base" action="/data?_method=PUT" method="post">
+        <label for="fname">Name:</label><br>
+        <input type="text" id="name" name="name" value="<%= user.name %>"><br>
+        <label for="lname">Age:</label><br>
+        <input type="text" id="age" name="age" value="<%= user.age %>"><br>
+        <input hidden type="text" id="id" name="id" value="<%= user.id %>"><br>
+        <button type="submit">Update</button>
+      </form> 
+    </div>
+</body>
+
+</html>

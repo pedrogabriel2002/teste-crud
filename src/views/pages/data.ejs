@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include ('../partials/header') %>
+    </header>    
+
+    <div class="div-center">
+        <%users.forEach(user => {%>
+        <form class="form-base" action="/data?_method=DELETE" method="post">
+            <label for="fname">Name: <%= user.name %></label><br>
+            <label for="lname">Age: <%= user.age %></label><br>
+            <input hidden ="text" id="id" name="id" value="<%= user.id %>">
+            <button type="submit"><img src="./img/trash.png" width="16" height="16"></button>
+            <a href="/data/update?id=<%= user.id %>"><img src="./img/edit.png" width="16" height="16"></a>
+        </form>
+        <%})%>
+    </div>
+
+</body>
+</html>
